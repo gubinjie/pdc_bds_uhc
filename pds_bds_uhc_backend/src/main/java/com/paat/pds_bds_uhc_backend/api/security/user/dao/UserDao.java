@@ -3,6 +3,8 @@ package com.paat.pds_bds_uhc_backend.api.security.user.dao;
 import com.paat.pds_bds_uhc_backend.api.security.user.model.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 /**
  * @author binjie.gu
  * @version 1.0.0
@@ -11,6 +13,12 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface UserDao {
 
+    /**
+     * 查询所有
+     *
+     * @return
+     */
+    List<User> listQuery();
     /**
      * 保存一个用户
      *

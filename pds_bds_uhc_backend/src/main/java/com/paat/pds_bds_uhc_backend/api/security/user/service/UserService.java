@@ -1,6 +1,9 @@
 package com.paat.pds_bds_uhc_backend.api.security.user.service;
 
 import com.paat.pds_bds_uhc_backend.api.security.user.model.entity.User;
+import com.paat.pds_bds_uhc_backend.api.security.user.model.form.UserForm;
+
+import java.util.List;
 
 /**
  * @author binjie.gu
@@ -10,10 +13,17 @@ import com.paat.pds_bds_uhc_backend.api.security.user.model.entity.User;
 public interface UserService {
 
     /**
-     * 保存一个用户
+     * 查询所有
      *
-     * @param entity
      * @return
      */
-    int save(User entity);
+    List<User> listQuery();
+
+    /**
+     * 保存一个用户
+     *
+     * @param form
+     * @return
+     */
+    int save(UserForm form);
 }

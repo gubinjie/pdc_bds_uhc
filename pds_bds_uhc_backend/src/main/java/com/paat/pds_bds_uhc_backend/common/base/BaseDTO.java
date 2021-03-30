@@ -1,7 +1,9 @@
 package com.paat.pds_bds_uhc_backend.common.base;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -18,7 +20,7 @@ import java.time.LocalDateTime;
  */
 @Data
 @MappedSuperclass
-public class BaseEntity implements Serializable {
+public class BaseDTO implements Serializable {
 
     @Id
     private String id;

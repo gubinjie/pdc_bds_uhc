@@ -4,6 +4,39 @@
 <mapper namespace="com.paat.pds_bds_uhc_backend.api.security.user.dao.UserDao">
 
     <insert id="insert">
+        insert into sys_user(
+            id,
+            created_date,
+            created_by,
+            updated_date,
+            updated_by,
+            name,
+            age,
+            sex,
+            address
+        )
+        values(
+               #{id},
+               #{createdDate},
+               #{createdBy},
+               #{updatedDate},
+               #{updatedBy},
+               #{name},
+               #{age},
+               #{sex},
+               #{address}
+              )
     </insert>
+    <select id="listQuery" resultType="com.paat.pds_bds_uhc_backend.api.security.user.model.entity.User">
+        select id,
+               created_date,
+               created_by,
+               updated_date,
+               updated_by,
+               name,
+               age,
+               sex,
+               address from sys_user
+    </select>
 
 </mapper>
