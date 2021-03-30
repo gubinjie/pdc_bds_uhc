@@ -1,8 +1,11 @@
 package com.paat.pds_bds_uhc_backend.api.security.user.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.paat.pds_bds_uhc_backend.api.security.user.dao.UserDao;
 import com.paat.pds_bds_uhc_backend.api.security.user.model.entity.User;
 import com.paat.pds_bds_uhc_backend.api.security.user.model.form.UserForm;
+import com.paat.pds_bds_uhc_backend.api.security.user.model.query.UserQuery;
 import com.paat.pds_bds_uhc_backend.api.security.user.service.UserService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +27,12 @@ public class UserServiceImpl implements UserService {
     private UserDao userDao;
 
     @Override
-    public List<User> listQuery() {
-        return userDao.listQuery();
+    public PageInfo<List<User>> listQuery(UserQuery query) {
+        PageHelper.startPage(query);
+
+        List<User> list = userDao.listQuery();
+        PageInfo<List<User>> pageInfo = new PageInfo(list);
+        return pageInfo;
     }
 
     @Override

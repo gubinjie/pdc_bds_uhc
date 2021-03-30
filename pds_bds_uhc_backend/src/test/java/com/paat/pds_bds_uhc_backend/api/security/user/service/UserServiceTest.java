@@ -1,14 +1,9 @@
 package com.paat.pds_bds_uhc_backend.api.security.user.service;
 
 import com.paat.pds_bds_uhc_backend.BaseTest;
-import com.paat.pds_bds_uhc_backend.api.security.user.model.entity.User;
 import com.paat.pds_bds_uhc_backend.api.security.user.model.form.UserForm;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.List;
 
 
 public class UserServiceTest extends BaseTest {
@@ -18,10 +13,13 @@ public class UserServiceTest extends BaseTest {
 
     @Test
     public void listQuery(){
-        List<User> list = userService.listQuery();
+        /*UserQuery query = new UserQuery();
+        query.setPageNum(2);
+        PageInfo<List<User>> list = userService.listQuery(query);
+        list.
         for (User user : list) {
             System.out.println(user.toString());
-        }
+        }*/
     }
 
     @Test
