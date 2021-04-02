@@ -16,11 +16,18 @@ public interface UserService {
 
     /**
      * 查询所有
-     * @param query
      *
+     * @param query
      * @return
      */
     PageInfo<List<User>> listQuery(UserQuery query);
+
+    /**
+     * 查询所有
+     *
+     * @return
+     */
+    List<User> list();
 
     /**
      * 保存一个用户

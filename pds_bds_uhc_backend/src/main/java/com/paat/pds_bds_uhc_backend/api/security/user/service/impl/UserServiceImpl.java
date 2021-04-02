@@ -11,8 +11,6 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 /**
@@ -36,9 +34,14 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public List<User> list() {
+        return userDao.listQuery();
+    }
+
+    @Override
     public int save(UserForm form) {
         User entity = new User();
-        BeanUtils.copyProperties(form,entity);
+        BeanUtils.copyProperties(form, entity);
         entity.setId("213123");
 
         return userDao.insert(entity);
