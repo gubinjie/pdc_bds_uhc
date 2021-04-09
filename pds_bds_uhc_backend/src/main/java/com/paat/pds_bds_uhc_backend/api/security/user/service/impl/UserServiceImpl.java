@@ -7,6 +7,7 @@ import com.paat.pds_bds_uhc_backend.api.security.user.model.entity.User;
 import com.paat.pds_bds_uhc_backend.api.security.user.model.form.UserForm;
 import com.paat.pds_bds_uhc_backend.api.security.user.model.query.UserQuery;
 import com.paat.pds_bds_uhc_backend.api.security.user.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,7 @@ import java.util.List;
  * @createTime 2021年03月26日
  */
 @Service
+@Slf4j
 public class UserServiceImpl implements UserService {
 
     @Autowired
